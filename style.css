@@ -16,16 +16,13 @@ body{
 }
 
 .container{  
-  min-height: 100vh;
-  width: 100%;
-  /* max-width: 1440px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; 
 }
 
-.card {
+.card{
   width: 100%;
   max-width: 400px;
   min-height: 423px;
@@ -37,53 +34,78 @@ body{
   padding-top: 20px;
 }
 
-.card__image{
+.card-image {
   width: 360px;
   height: 240px;
   border-radius: 10px;
+  background: url(https://i.imgur.com/8lfyON3.png) 100% 100.125% no-repeat;
 }
 
-.card__container {
-  width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
+.card-container{
+  width: 90%;
   padding-top: 24px;
   padding-bottom: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 24px;
-  justify-content: space-between;
-  /* background-color: pink; */
 }
 
-.card__title {
-  width: 220px;
+.card-container__title {
+  width: calc(100% - 50px);
   color: #393232;
   font-size: 22px;
   font-weight: 600;
 }
 
-.like-button {
-  width: 40px !important;
-  height: 40px !important;
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card-container__button {
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fff;
   filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.15));
-  border-radius: 100%  !important;
-  border: none;
+  border-radius: 100%;
+  border: none;  
+  transition: background-color 1.5s ease;
 }
+
+.card-container__button:hover {
+  background-color: #EC4646;
+}
+
 .like-button__icon {
   width: 25px;
   height: 25px;
   stroke: #5e5e5e;
+  transition: stroke 1.5s ease;
+}
+
+.card-container__button:hover .like-button__icon {
+  stroke: #fff;
 }
 
 
 
-.footer {
+
+
+
+
+
+.card-footer {
   width: 90%;
   display: flex;
   align-items: flex-start ;
@@ -100,65 +122,39 @@ body{
   position: relative;
 }
 
-.view-counter::after{
-  content: '\2022'; 
-  color: #787878;
-  margin-left: 5px;
+.view-counter__icon {
+  width: 18px;
+  height: 18px;
+  stroke: #787878;
 }
 
-.view-counter__icon,
-.calendar__icon {
-  margin-right: 8px; /* Добавлено пространство между иконкой и текстом, настройте по вашему усмотрению */
-}
-
-.view-counter__number{
+.view-counter__number,
+.calendar__date{
   color: #787878;
   font-family: Lexend;
   font-size: 16px;
   font-weight: 500;
-  line-height: 24px; 
-}
-
-
-.calendar__wrapper {
-  position: relative;
-}
-
-.calendar__date {
-  color: #787878;
-  font-family: 'Lexend', sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-  padding-left: 25px; /* Расстояние между значком и левым краем, настройте по вашему усмотрению */
-  border: none; /* Удаление рамки вокруг элемента ввода */
-  outline: none; /* Удаление контура фокуса при клике */
+  line-height: 24px;   
+  padding-left: 4px;
 }
 
 .calendar__icon {
-  position: absolute;
-  top: 50%;
-  left: 5px; /* Расстояние между значком и левым краем, настройте по вашему усмотрению */
-  transform: translateY(-50%);
-  pointer-events: none; /* Это позволит щелчкам проходить сквозь иконку на input[type="date"] */
+  width: 16px;
+  height: 16px;
+  stroke: #787878;
 }
 
-
-
-.calendar__date::-webkit-calendar-picker-indicator {
-  display: none;
+.calendar{
+/*   position: relative; */
 }
 
-.calendar__date[type="date"] {
-  -moz-appearance: none;
+.calendar::before {
+  content: '\2022'; 
+  color: #787878;
+  margin-left: 9px;
+  margin-right: 11px;
+/*   position: absolute; */
 }
-
-.calendar__date[type="date"]::-moz-calendar-picker-indicator {
-  display: none;
-}
-
-
 
 
 
@@ -167,4 +163,10 @@ body{
 
 body{
   background-color: #858585; 
+}
+
+.container{
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1440px;
 }
