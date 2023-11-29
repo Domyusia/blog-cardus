@@ -58,10 +58,7 @@ body{
   transition: color 1.3s;
 }
 
-.card-container__title:hover {
-color: #3932325e;
-transition: 1.3s;
-}
+
 
 
 
@@ -90,7 +87,10 @@ transition: 1.3s;
 .card-container__button:hover {
   background-color: #EC4646;
 }
-
+.card-container__title:hover {
+  color: #3932325e;
+  transition: 1.3s;
+  }
 .like-button__icon {
   width: 25px;
   height: 25px;
